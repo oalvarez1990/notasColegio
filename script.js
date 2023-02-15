@@ -96,9 +96,8 @@ function pintar() {
   tabla.innerHTML = encabezado;
 
   if (lista == null) {
-    tabla.innerHTML = "";
+    tabla.innerHTML += ""; // En lugar de sobreescribir la tabla, concatenar el contenido vacío
   } else {
-    tabla.innerHTML = encabezado; // Asegurarse de que el encabezado se muestre incluso si no hay elementos en la lista
     for (i = 0; i < lista.length; i++) {
       tabla.innerHTML += `
           <tr>
@@ -117,6 +116,7 @@ function pintar() {
   }
 }
 
+
 // funcion para limpiar los campos
 function limpiar() {
   nombre.value = "";
@@ -133,19 +133,5 @@ function eliminar(i) {
   lista.splice(i, 1);
   localStorage.setItem("estudiantes", JSON.stringify(lista));
   pintar();
-}
-
-// funcion para cerrar el modal
-function cerrar() {
-  myModal.style.display = "none";
-}
-
-// funcion para abrir el modal
-function abrir() {
-  // condicion para que no se abra el modal si no hay datos en el localstore
-  if (lista == null) {
-    alert("No hay datos para mostrar");
-  }
-  myModal.style.display = "block";
 }
 

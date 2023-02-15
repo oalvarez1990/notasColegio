@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.encabezado {
+  background: #136a8a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #267871,
+    #136a8a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #267871,
+    #136a8a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  max-height: 80px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.menu ul li {
+  margin-left: 20px;
+}
+.menu ul li:first-child {
+  margin-left: 0;
+}
+.menu ul li a {
+  color: #ffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.menu ul li a:hover {
+  color: #ff6600;
+}
+
+.titulo {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+table th{
+  color: #ff6600;
+}
+/* responsive menu */
+@media screen and (max-width: 385px) {
+  .contenedor {
+    flex-direction: column;
+  }
+  .logo {
+    margin-top: 20px;
+    order: -1;
+    height: 50px;
+  }
+  .menu {
+    order: -1;
+  }
+  .logo img {
+    max-height: 40px;
+  }
+  .menu {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .menu ul {
+    flex-direction: column;
+  }
+  .menu ul li {
+    margin: 0;
+  }
+  .menu ul li a {
+    display: block;
+    padding: 10px 0;
+    color: wheat;
+  }
+}
+
+/* responsive tabla */
+@media screen and (max-width: 385px) {
+  table {
+    width: 100%;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #ccc;
+    font-size: 10px;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+    /* dismuir tamaño de la letra */
+    
+  }
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;    
+  }
+  td:nth-of-type(1):before {
+    content: "Nombre:";
+  }
+  td:nth-of-type(2):before {
+    content: "Curso:";
+  }
+  td:nth-of-type(3):before {
+    content: "Genero:";
+  }
+  td:nth-of-type(4):before {
+    content: "Nota 1:";
+  }
+  td:nth-of-type(5):before {
+    content: "Nota 2:";
+  }
+  td:nth-of-type(6):before {
+    content: "Nota 3:";
+  }
+  td:nth-of-type(7):before {
+    content: "Promedio:";
+  }
+  td:nth-of-type(8):before {
+    content: "Estado:";
+  }
+}
